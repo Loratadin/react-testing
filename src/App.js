@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios';
 
 export const add = (x, y) => x + y;
 
@@ -10,6 +11,12 @@ export const createUser = () => {
   user["lastName"] = "Happyness";
   return user;
 }
+
+export const fetchUser = () =>
+  axios
+  .get("https://jsonplaceholder.typicode.com/users/1")
+  .then(response => response.data)
+  .catch(error => "ups...")
 
 export const total = (shipping, subTotal) => {
   return "$" + add(shipping, subTotal)

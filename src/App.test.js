@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { isNull, checkValue, createUser } from "./App";
+import { isNull, checkValue, createUser, fetchUser } from "./App";
 
 const add = jest.fn(()=>3)
 // unit test
@@ -25,8 +25,24 @@ test('limitAmount', () => {
   expect(load1 + load2).toBeLessThan(1600);
 })
 
+// regex
 test('filterUrls', () => {
   expect('example.com/blog').not.toMatch(/qa/);
+})
+
+// Arrays
+test('isValueInArray', () => {
+  const usernames = ["Michael", "Kellum", "admin"]
+  expect(usernames).toContain('admin')
+})
+
+// async data
+test('fetchUser', () => {
+  expect.assertions(1);
+  return fetchUser()
+    .then(data => {
+      expect(data.name).toEqual("Leanne Graham")
+    })
 })
 
 test('createUser', () => {
