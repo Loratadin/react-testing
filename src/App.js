@@ -11,6 +11,11 @@ export const createUser = () => {
   user["lastName"] = "Happyness";
   return user;
 }
+export const reverseString = str =>
+  str
+    .split(' ')
+    .reverse()
+    .join(' ')
 
 export const fetchUser = () =>
   axios

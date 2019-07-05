@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { isNull, checkValue, createUser, fetchUser } from "./App";
+import { isNull, checkValue, createUser, fetchUser, reverseString } from "./App";
 
 const add = jest.fn(()=>3)
 // unit test
@@ -36,13 +36,25 @@ test('isValueInArray', () => {
   expect(usernames).toContain('admin')
 })
 
-// async data
-test('fetchUser', () => {
+// Promise
+test('fetchUserPromise', () => {
   expect.assertions(1);
   return fetchUser()
     .then(data => {
       expect(data.name).toEqual("Leanne Graham")
     })
+})
+
+// Async Await
+test('fetchUserAsyncAwait', async() => {
+  expect.assertions(1);
+ const data = await fetchUser()
+      expect(data.name).toEqual("Leanne Graham")
+})
+
+// to be Defined
+test('reverseString', () => {
+  expect(reverseString).toBeDefined()
 })
 
 test('createUser', () => {
