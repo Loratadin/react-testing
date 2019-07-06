@@ -49,7 +49,7 @@ test('fetchUserPromise', () => {
 test('fetchUserAsyncAwait', async() => {
   expect.assertions(1);
  const data = await fetchUser()
-      expect(data.name).toEqual("Leanne Graham")
+  expect(data.name).toEqual("Leanne Graham")
 })
 
 // to be Defined
