@@ -50,6 +50,19 @@ export default class App extends React.Component  {
       return chunkedArray;
     })
   }
+
+  formatStr = string => {
+    return string
+      .replace(/[^\w]/g, ' ')
+      .toLowerCase()
+      .split(' ')
+      .sort()
+      .join(' ')
+  }
+  isAnagram = (str1, str2) => {
+    return this.formatStr(str1) === this.formatStr(str2)
+  }
+
   render() {
     console.log("result", this.chunkedArray([1, 2, 3, 4, 5, 6, 7], 3))
     return (
