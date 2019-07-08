@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { isNull, checkValue, createUser, fetchUser, reverseString } from "./App";
+import { isNull, checkValue, createUser, fetchUser } from "./App";
+const { reverseString } = require('./App');
 
 const add = jest.fn(()=>3)
 // unit test
