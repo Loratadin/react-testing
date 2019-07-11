@@ -1,8 +1,8 @@
-exports.generateText = (name, age) => {
+const generateText = (name, age) => {
     return `${name} (${age} years old)`
 }
 
-exports.validateInput = (text, notEmpty, isNumber) => {
+ const validateInput = (text, notEmpty, isNumber) => {
     if (!text) {
         return false
     }
@@ -19,5 +19,8 @@ exports.checkAndGenerate = (name, age) => {
     if (!validateInput(name, true, false) || !validateInput(age, false, true)) {
         return
     }
-    return this.generateText(name, age)
+    return generateText(name, age)
 }
+
+exports.generateText = generateText
+exports.validateInput = validateInput
