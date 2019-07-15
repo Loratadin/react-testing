@@ -66,8 +66,9 @@ export default class App extends React.Component  {
   render() {
     console.log("result", this.chunkedArray([1, 2, 3, 4, 5, 6, 7], 3))
     return (
-      <div className="App">
-        Home
+      <div className="app">
+        <div className="quote">Truth lies within a little and certain compass, but error is immense</div>
+        <img className="logoIMG" alt="logo" src="https://www.gstatic.com/webp/gallery3/5_webp_ll.webp"/>
       </div>
     );
   }

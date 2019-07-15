@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+}
+.quote {
+  margin: 20px;
+  color: #00cc44;
+  font-weight: 700;
+  font-size: 20px;
+}
+.logoIMG {
+  width: 100px;
+}

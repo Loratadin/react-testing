@@ -12,6 +12,11 @@ test('add', () => {
   expect(add).toHaveBeenCalledWith(1, 2);
 })
 
+
+test('it should contain logo', () => {
+  expect(App).toContain('.logoIMG')
+})
+
 test('isNull', () => {
   expect(isNull()).toBeNull()
 })
