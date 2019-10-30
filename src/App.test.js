@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import Home from './Home';
 import { isNull, checkValue, createUser, fetchUser } from "./App";
+import { shallow } from 'enzyme';
 const { reverseString } = require('./App');
 
 const add = jest.fn(()=>3)
@@ -70,8 +71,9 @@ test('createUser', () => {
   })
 })
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('<Home/>', () => {
+  it('renders without crashing', () => {
+    const component = shallow(<Home />);
+    expect(component.find('.app').length).toEqual(1)
+  });
+})
